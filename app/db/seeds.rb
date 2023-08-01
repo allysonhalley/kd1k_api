@@ -23,3 +23,20 @@ include ApplicationHelper
 	)
 end
 puts "Created 10 people!"
+
+@person = Person.all
+
+@person.each do |p|	
+	Address.create!(
+        person: Person.find(p.id),
+        cep: Faker::Address.postcode,
+        street: Faker::Address.street_name,
+        number: Faker::Address.building_number,
+        neighborhood: Faker::Name.name_with_middle,
+        city: Faker::Address.city,
+        state: Faker::Address.state,
+        country: Faker::Address.country,
+        complement: Faker::Address.secondary_address
+    )
+end
+puts "Created " + @person.count.to_s + " Address!"
