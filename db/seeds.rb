@@ -4,7 +4,7 @@ include ApplicationHelper
 # rails g scaffold Address person:references cep:string street:string number:string neighborhood:string city:string state:string country:string complement:string
 # rails g scaffold Voter_data person:references number:string zone:string section:string
 # rails g scaffold Parents person:references mother:string father:string
-# rails g scaffold Blood person:references group:char rh:string
+# rails g scaffold Blood person:references group:string type:string rh:string
 # rails g scaffold Military_data person:references general_register:string into_register:string level:string
 # rails g scaffold Level name:string sign:string type:string code_type:string raking:integer
 # rails g scaffold Phone person:references number:string type:string maind:boolean
@@ -43,7 +43,6 @@ puts "Creating Address"
     )
 end
 puts "Created " + Address.count.to_s " addresses!"
-DOC
 puts "Creating Voter Data"
 @people.each do |p|
     VoterDatum.create!(
@@ -55,3 +54,25 @@ puts "Creating Voter Data"
 end
 puts "Created " + VoterDatum.count.to_s + " Voters Data!"
 
+puts "Creating Parents on " + @people.count.to_s + " People" 
+@people.each do |p|
+    Parent.create!(
+        person: Person.find(p.id),
+        mother: Faker::Name.female_first_name,
+        father: Faker::Name.male_first_name,
+    )
+end
+puts "Created " + Parent.count.to_s + " Parents!"
+    
+DOC
+
+puts "Creating Blood on " + @people.count.to_s + " People" 
+@people.each do |p|
+    Blood.create!(
+        person: Person.find(p.id),
+        group: Faker::Blood.group,
+        type: Faker::Blood.type,
+        rh: Faker::Blood.rh_factor
+    )
+end
+puts "Created " + Blood.count.to_s + " Blood Data!"

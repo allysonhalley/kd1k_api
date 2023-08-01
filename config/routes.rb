@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  resources :bloods
   resources :parents
   resources :voter_data
   resources :addresses
