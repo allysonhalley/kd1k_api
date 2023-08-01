@@ -22,7 +22,7 @@ include ApplicationHelper
 		email: Faker::Internet.email
 	)
 end
-puts "Created 10 people!"
+puts "Created " + Person.count.to_s + " people!"
 
 @person = Person.all
 
@@ -39,4 +39,15 @@ puts "Created 10 people!"
         complement: Faker::Address.secondary_address
     )
 end
-puts "Created " + @person.count.to_s + " Address!"
+puts "Created " + Address.count.to_s + " Address!"
+
+@person.each do |p|
+    Voter_data.create!(
+        person: Person.find(p.id),
+        number: ApplicationHelper::code_string_generator(12),
+        zone: ApplicationHelper::code_string_generator(3),        
+        section: ApplicationHelper::code_string_generator(3)
+    )
+end
+puts "Created " + Voter_data.count.to_s + " Voter Data!"
+
