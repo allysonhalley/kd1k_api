@@ -43,6 +43,7 @@ puts "Creating Address"
     )
 end
 puts "Created " + Address.count.to_s " addresses!"
+
 puts "Creating Voter Data"
 @people.each do |p|
     VoterDatum.create!(
@@ -59,7 +60,7 @@ puts "Creating Parents on " + @people.count.to_s + " People"
     Parent.create!(
         person: Person.find(p.id),
         mother: Faker::Name.female_first_name,
-        father: Faker::Name.male_first_name,
+        father: Faker::Name.male_first_name
     )
 end
 puts "Created " + Parent.count.to_s + " Parents!"
