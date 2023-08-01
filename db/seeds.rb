@@ -9,6 +9,8 @@ include ApplicationHelper
 # rails g scaffold Level name:string sign:string type:string code_type:string raking:integer
 # rails g scaffold Phone person:references number:string type:string maind:boolean
 
+<<-DOC
+puts "Creating People"
 10.times do |i|
 	
 	Person.create!(
@@ -22,11 +24,12 @@ include ApplicationHelper
 		email: Faker::Internet.email
 	)
 end
-puts "Created " + Person.count.to_s + " people!"
-
-@person = Person.all
-
-@person.each do |p|	
+puts "Created " + Person.count.to_s " people!"
+DOC
+@people = Person.all
+<<-DOC
+puts "Creating Address"
+@people.each do |p|	
 	Address.create!(
         person: Person.find(p.id),
         cep: Faker::Address.postcode,
@@ -39,15 +42,16 @@ puts "Created " + Person.count.to_s + " people!"
         complement: Faker::Address.secondary_address
     )
 end
-puts "Created " + Address.count.to_s + " Address!"
-
-@person.each do |p|
-    Voter_data.create!(
+puts "Created " + Address.count.to_s " addresses!"
+DOC
+puts "Creating Voter Data"
+@people.each do |p|
+    VoterDatum.create!(
         person: Person.find(p.id),
         number: ApplicationHelper::code_string_generator(12),
         zone: ApplicationHelper::code_string_generator(3),        
         section: ApplicationHelper::code_string_generator(3)
     )
 end
-puts "Created " + Voter_data.count.to_s + " Voter Data!"
+puts "Created " + VoterDatum.count.to_s + " Voters Data!"
 
