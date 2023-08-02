@@ -9,5 +9,6 @@ class Address
   field :state, type: String
   field :country, type: String
   field :complement, type: String
+
   belongs_to :person
 end

@@ -38,10 +38,18 @@ class AddressesController < ApplicationController
     @address.destroy
   end
 
+  # GET /addresses/1
+  def addresses_to_person
+    puts params
+    @addresses = Address.where(person_id: params[:id])
+    render json: @addresses
+  end
+
   private
     # Use callbacks to share common setup or constraints between actions.
     def set_address
       @address = Address.find(params[:id])
+      render 
     end
 
     # Only allow a trusted parameter "white list" through.

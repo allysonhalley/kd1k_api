@@ -9,4 +9,6 @@ class Person
   field :nationality, type: String
   field :gender, type: String
   field :email, type: String
+
+  has_many :address, dependent: :destroy
 end
