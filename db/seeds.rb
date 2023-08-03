@@ -9,7 +9,7 @@ include ApplicationHelper
 # rails g scaffold Level name:string sign:string type:string code_type:string raking:integer
 # rails g scaffold Phone person:references number:string type:string maind:boolean
 
-<<-DOC
+
 puts "Creating People"
 10.times do |i|
 	
@@ -24,10 +24,10 @@ puts "Creating People"
 		email: Faker::Internet.email
 	)
 end
-puts "Created " + Person.count.to_s " people!"
-DOC
-@people = Person.all
+puts "Created " + Person.count.to_s + " people!"
 <<-DOC
+@people = Person.all
+
 puts "Creating Address"
 @people.each do |p|	
 	Address.create!(
@@ -65,7 +65,6 @@ puts "Creating Parents on " + @people.count.to_s + " People"
 end
 puts "Created " + Parent.count.to_s + " Parents!"
     
-DOC
 
 puts "Creating Blood on " + @people.count.to_s + " People" 
 @people.each do |p|
@@ -77,3 +76,4 @@ puts "Creating Blood on " + @people.count.to_s + " People"
     )
 end
 puts "Created " + Blood.count.to_s + " Blood Data!"
+DOC
