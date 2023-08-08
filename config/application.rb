@@ -36,5 +36,7 @@ module Kd1kApi
     # Middleware like session, flash, cookies can be added back manually.
     # Skip views, helpers and assets when generating a new resource.
     config.api_only = true
+
+    config.hosts << "web-production-9e97.up.railway.app"
   end
 end
