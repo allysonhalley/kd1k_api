@@ -7,7 +7,7 @@ ruby '3.0.0'
 gem 'rails', '~> 6.0.6', '>= 6.0.6.1'
 
 # The original asset pipeline for Rails [https://github.com/rails/sprockets-rails]
-gem "sprockets-rails"
+# gem "sprockets-rails"
 
 # Use Puma as the app server
 gem 'puma', '~> 4.1'
