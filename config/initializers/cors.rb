@@ -7,7 +7,7 @@
 
 Rails.application.config.middleware.insert_before 0, Rack::Cors do
   allow do
-    origins 'http://localhost:4200', 'https://bright-muffin-3b185b.netlify.app'
+    origins 'http://localhost:4200', 'https://bright-muffin-3b185b.netlify.app', 'https://64d5a66bf7a6361d32ec7e1f--bright-muffin-3b185b.netlify.app'
     resource '*',
       headers: :any,
       methods: [:get, :post, :put, :patch, :delete, :options, :head]
