@@ -1,6 +1,7 @@
 class Person
   include Mongoid::Document
   include Mongoid::Timestamps
+  field :id, type: String
   field :name, type: String
   field :cpf, type: String
   field :rg, type: String
