@@ -1,6 +1,14 @@
 class BloodsController < ApplicationController
   before_action :set_blood, only: [:show, :update, :destroy]
 
+  #group_list = %w(A B AB O).each
+  #type_list = %w( A B AB O).each
+  #rh_list = %w(POSITIVO NEGATIVO).each
+
+  group_list = ["A", "B", "AB", "O"].to_enum
+  type_list = ["A", "B", "AB", "O"].to_enum
+  rh_list = ["POSITIVO", "NEGATIVO"].to_enum
+
   # GET /bloods
   def index
     @bloods = Blood.all
@@ -36,6 +44,18 @@ class BloodsController < ApplicationController
   # DELETE /bloods/1
   def destroy
     @blood.destroy
+  end
+
+  def group_list
+    group_list
+  end
+
+  def type_list
+    type_list
+  end
+
+  def rh_list
+    rh_list
   end
 
   private
