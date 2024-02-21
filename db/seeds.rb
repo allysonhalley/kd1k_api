@@ -1,6 +1,6 @@
 include ApplicationHelper
 ###
-# rails g scaffold Person name:string cpf:string civilian_rg:references rg_organization:string birthday:date place_birth:string nationality:string gender:string marital_status:string email:string
+# rails g scaffold Person name:string cpf:string birthday:date place_birth:string nationality:string gender:string marital_status:string email:string
 # rails g scaffold Address person:references cep:string street:string number:string neighborhood:string city:string state:string country:string complement:string reference_point:string
 # rails g scaffold Parents person:references mother:string father:string
 # rails g scaffold Spouse person:references name:string

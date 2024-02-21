@@ -1,20 +1,11 @@
 development:
-  # Configure available database clients. (required)
   clients:
-    # Defines the default client. (required)
     default:
-      # Mongoid can connect to a URI accepted by the driver:
-      uri: mongodb+srv://admin:admin123@test.guzqdnv.mongodb.net/test
-
-      # Otherwise define the parameters separately.
-      # This defines the name of the default database that Mongoid can connect to.
-      # (required).
-      # database: kd1k_api_development
-      # Provides the hosts the default client can connect to. Must be an array
-      # of host:port pairs. (required)
-      # hosts:
-      #   - localhost:27017
+      uri: mongodb+srv://admin:admin@test.guzqdnv.mongodb.net/kd1k_development
+      # uri: mongodb+srv://kd1k:kd1k@cluster0.ipdmmye.mongodb.net/kd1k_development
+      # uri: mongodb+srv://kd1k:kd1k@cluster0.ipdmmye.mongodb.net/kd1k_development?retryWrites=true&w=majority
       options:
+        server_selection_timeout: 5        
         # Note that all options listed below are Ruby driver client options (the mongo gem).
         # Please refer to the driver documentation of the version of the mongo gem you are using
         # for the most up-to-date list of options.
@@ -176,18 +167,10 @@ development:
 test:
   clients:
     default:
-      database: kd1k_api_test
+      database: kd1k_test
       hosts:
         - localhost:27017
       options:
         read:
           mode: :primary
         max_pool_size: 1
-
-production:
-  # Configure available database clients. (required)
-  clients:
-    # Defines the default client. (required)
-    default:
-      # Mongoid can connect to a URI accepted by the driver:
-      uri: mongodb+srv://admin:admin123@test.guzqdnv.mongodb.net/test
