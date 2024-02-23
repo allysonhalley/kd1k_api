@@ -3,16 +3,6 @@
       # uri: mongodb+srv://kd1k:kd1k@cluster0.ipdmmye.mongodb.net/kd1k_development?retryWrites=true&w=majority
       # uri: mongodb://atlas-sql-64bae5ba29727b23acb050cc-gpttc.a.query.mongodb.net/test?ssl=true&authSource=admin
       # uri: mongodb+srv://kd1k:kd1k@Cluster0.ipdmmye.mongodb.net/kd1k_development
-      # development:
-      #  clients:
-      #    default:
-      #      uri: <%= ENV['MONGODB_URI'] %>
-      #      options:
-      #        server_selection_timeout: 5
-      #        auto_source: Cluster0
-      #        user: <%= ENV['USER'] %>
-      #        password: <%= ENV['PASSWORD'] %>
-      #        auth_mech: :mongodb_cr
 
       development:
         clients:
