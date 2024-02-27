@@ -1,0 +1,15 @@
+# Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  name: MyString
+  sign: MyString
+  type: 
+  code_type: MyString
+  raking: 1
+
+two:
+  name: MyString
+  sign: MyString
+  type: 
+  code_type: MyString
+  raking: 1
